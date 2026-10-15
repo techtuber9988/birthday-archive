@@ -1,0 +1,764 @@
+
+/* ========================================
+   THE BAKCHODI ERA
+======================================== */
+
+.gossip-page {
+  --gossip-ink: #3c2028;
+  overflow-x: clip;
+}
+
+.gossip-page .topbar {
+  gap: 18px;
+}
+
+.gossip-page .archive-back {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  white-space: nowrap;
+}
+
+.gossip-page .brand {
+  justify-content: center;
+}
+
+.gossip-page .top-date {
+  white-space: nowrap;
+}
+
+.gossip-hero {
+  min-height: 610px;
+  padding: 95px 0 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.gossip-kicker,
+.incident-label,
+.incident-date,
+.note-category {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.gossip-kicker {
+  color: var(--red-deep);
+  margin-bottom: 22px;
+}
+
+.gossip-hand {
+  font: 600 25px/1.1 var(--hand);
+  color: var(--red);
+  transform: rotate(-4deg);
+  margin-bottom: 12px;
+}
+
+.gossip-hero h1 {
+  font-family: var(--display);
+  font-size: clamp(65px, 9vw, 112px);
+  line-height: .91;
+  letter-spacing: -.075em;
+  margin: 0 0 26px;
+}
+
+.gossip-hero h1 span {
+  display: block;
+  color: var(--red);
+}
+
+.gossip-intro {
+  max-width: 480px;
+  padding-inline: 10px;
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--gossip-ink);
+}
+
+.gossip-sticker {
+  position: absolute;
+  left: 5%;
+  top: 150px;
+  width: 98px;
+  height: 98px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--orange);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.4;
+  transform: rotate(-13deg);
+  box-shadow: 4px 5px 0 var(--berry);
+}
+
+.gossip-cherries {
+  position: absolute;
+  right: 8%;
+  top: 170px;
+  font-size: 48px;
+  transform: rotate(12deg);
+}
+
+.case-stamp {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 16px 28px;
+  margin-top: 12px;
+  border: 1.5px dashed var(--berry);
+  background: rgba(255, 250, 244, .65);
+  transform: rotate(-2deg);
+}
+
+.case-stamp span {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.case-stamp strong {
+  color: var(--red);
+  font-size: 13px;
+  letter-spacing: .06em;
+}
+
+.gossip-scroll-note {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 36px;
+  color: #a86b71;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.gossip-scroll-note span:last-child {
+  color: var(--red);
+  font-size: 21px;
+  animation: gossip-bob 1.5s ease-in-out infinite;
+}
+
+@keyframes gossip-bob {
+  50% { transform: translateY(5px); }
+}
+
+/* Incident sections */
+
+.incident-section {
+  padding: 42px 0 72px;
+}
+
+.incident-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--line);
+  margin-bottom: 26px;
+}
+
+.incident-label {
+  color: var(--red);
+}
+
+.incident-date {
+  color: #a86b71;
+  text-align: right;
+}
+
+.incident-card {
+  position: relative;
+  padding: clamp(25px, 5vw, 62px);
+  border: 1.5px solid var(--berry);
+  box-shadow: 8px 9px 0 var(--berry);
+  overflow: hidden;
+}
+
+.washing-card {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  align-items: center;
+  gap: 42px;
+  background: var(--yellow);
+  transform: rotate(-.5deg);
+}
+
+.incident-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.incident-copy .eyebrow,
+.warning-card .eyebrow {
+  font-size: 9px;
+  line-height: 1.6;
+  letter-spacing: .12em;
+}
+
+.incident-copy h2,
+.warning-card h2,
+.verdict-paper h2 {
+  font-family: var(--display);
+  font-size: clamp(40px, 5vw, 66px);
+  line-height: .98;
+  letter-spacing: -.065em;
+  margin: 0 0 22px;
+}
+
+.incident-copy h2 em,
+.warning-card h2 em,
+.verdict-paper h2 em {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.incident-copy > p:not(.eyebrow),
+.warning-description {
+  max-width: 340px;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.incident-hand {
+  display: block;
+  margin-top: 25px;
+  font: 600 20px/1.2 var(--hand);
+  color: var(--red-deep);
+}
+
+.quote-paper {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid rgba(123, 38, 56, .35);
+  padding: 38px 30px 25px;
+  box-shadow: 4px 5px 0 rgba(123, 38, 56, .16);
+  transform: rotate(1.2deg);
+}
+
+.quote-mark {
+  position: absolute;
+  top: -13px;
+  left: 20px;
+  color: var(--red);
+  font-family: var(--display);
+  font-size: 72px;
+  line-height: 1;
+}
+
+.quote-paper blockquote {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -.025em;
+}
+
+.quote-attribution {
+  margin-top: 24px;
+  font: 600 19px/1.2 var(--hand);
+  color: var(--red);
+}
+
+.quote-doodle {
+  position: absolute;
+  right: 15px;
+  bottom: 9px;
+  font-size: 27px;
+  color: var(--orange);
+}
+
+.incident-number {
+  position: absolute;
+  right: 15px;
+  top: 8px;
+  font: 800 11px var(--body);
+  opacity: .55;
+}
+
+/* Warning card */
+
+.warning-card {
+  background: var(--red);
+  color: white;
+  padding: clamp(30px, 6vw, 68px);
+  transform: rotate(.4deg);
+}
+
+.warning-card .eyebrow {
+  color: #ffe29a;
+  margin-top: 10px;
+}
+
+.warning-emoji {
+  display: inline-grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: var(--yellow);
+  font-size: 30px;
+  box-shadow: 3px 4px 0 var(--berry);
+}
+
+.warning-card h2 {
+  max-width: 700px;
+  font-size: clamp(46px, 7vw, 82px);
+}
+
+.warning-card h2 em {
+  color: var(--yellow);
+}
+
+.warning-description {
+  max-width: 450px;
+  color: #fff0e7;
+}
+
+.warning-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  padding-top: 20px;
+  margin-top: 30px;
+  border-top: 1px dashed rgba(255,255,255,.45);
+  font-size: 9px;
+  letter-spacing: .08em;
+}
+
+.warning-footer strong {
+  color: var(--yellow);
+}
+
+.warning-footer span:last-child {
+  color: var(--yellow);
+  margin-left: auto;
+}
+
+.warning-hand {
+  display: block;
+  margin-top: 28px;
+  font: 600 22px/1.2 var(--hand);
+  color: var(--yellow);
+  transform: rotate(-2deg);
+}
+
+/* Ragebait cards */
+
+.ragebait-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.ragebait-note {
+  min-height: 285px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  border: 1.5px solid var(--berry);
+  box-shadow: 6px 7px 0 var(--berry);
+}
+
+.note-yellow {
+  background: var(--yellow);
+  transform: rotate(-1.5deg);
+}
+
+.note-orange {
+  background: var(--orange);
+  transform: rotate(1.5deg);
+}
+
+.note-icon {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.note-category {
+  font-size: 8px;
+  margin-bottom: 12px;
+}
+
+.ragebait-note h3 {
+  font: 700 clamp(25px, 3vw, 36px)/1.05 var(--display);
+  letter-spacing: -.045em;
+  margin-bottom: 12px;
+}
+
+.ragebait-note p {
+  font-size: 12px;
+  line-height: 1.75;
+  margin-bottom: 25px;
+}
+
+.note-caption {
+  margin-top: auto;
+  font: 600 21px/1.1 var(--hand);
+  color: var(--red-deep);
+}
+
+.ragebait-verdict {
+  margin: 34px auto 0;
+  text-align: center;
+  font: 600 23px/1.4 var(--display);
+}
+
+.ragebait-verdict span {
+  display: block;
+  font: 600 22px/1.2 var(--hand);
+  color: var(--red);
+  margin-top: 5px;
+}
+
+/* Final verdict */
+
+.verdict-section {
+  padding: 70px 0 95px;
+}
+
+.verdict-paper {
+  position: relative;
+  max-width: 850px;
+  margin: auto;
+  padding: clamp(35px, 7vw, 75px);
+  background: var(--paper);
+  border: 1.5px solid var(--berry);
+  box-shadow: 9px 10px 0 var(--yellow);
+}
+
+.verdict-paper .eyebrow {
+  max-width: 75%;
+  line-height: 1.6;
+}
+
+.verdict-paper h2 {
+  font-size: clamp(48px, 7vw, 82px);
+  margin-bottom: 22px;
+}
+
+.verdict-paper > p:not(.eyebrow) {
+  max-width: 500px;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.verdict-last-line {
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--line);
+}
+
+.verdict-last-line span {
+  display: block;
+  font: 600 26px/1.2 var(--hand);
+  color: var(--red);
+  margin-top: 8px;
+}
+
+.verdict-signature {
+  margin-top: 32px;
+  color: var(--red-deep);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.verdict-star {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  font-size: 48px;
+  color: var(--orange);
+  transform: rotate(15deg);
+}
+
+/* Bottom navigation */
+
+.gossip-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 25px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 40px;
+}
+
+.gossip-bottom-nav a,
+.gossip-bottom-nav span {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .07em;
+}
+
+.gossip-bottom-nav a {
+  color: var(--red-deep);
+}
+
+.gossip-bottom-nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.gossip-bottom-nav span {
+  color: #a86b71;
+  text-align: center;
+}
+
+.gossip-page .archive-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 24px 28px;
+  color: #a86b71;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+/* Responsive layout */
+
+@media (max-width: 850px) {
+  .gossip-sticker {
+    left: 0;
+    transform: scale(.8) rotate(-13deg);
+  }
+
+  .gossip-cherries {
+    right: 0;
+    transform: scale(.85) rotate(12deg);
+  }
+
+  .washing-card {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .incident-copy > p:not(.eyebrow) {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gossip-page .topbar {
+    height: auto;
+    min-height: 65px;
+    flex-wrap: wrap;
+    padding-block: 12px;
+    gap: 10px;
+  }
+
+  .gossip-page .brand {
+    order: -1;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .gossip-page .archive-back,
+  .gossip-page .top-date {
+    font-size: 8px;
+  }
+
+  .gossip-hero {
+    min-height: auto;
+    padding: 85px 0 45px;
+  }
+
+  .gossip-kicker {
+    font-size: 8px;
+  }
+
+  .gossip-hand {
+    font-size: 22px;
+  }
+
+  .gossip-hero h1 {
+    font-size: clamp(57px, 14vw, 78px);
+  }
+
+  .gossip-intro {
+    font-size: 13px;
+  }
+
+  .gossip-sticker {
+    top: 12px;
+    left: 0;
+    width: 69px;
+    height: 69px;
+    font-size: 8px;
+  }
+
+  .gossip-cherries {
+    top: 16px;
+    right: 0;
+    font-size: 32px;
+  }
+
+  .case-stamp {
+    max-width: 90%;
+    padding: 14px 18px;
+  }
+
+  .case-stamp strong {
+    font-size: 11px;
+  }
+
+  .incident-section {
+    padding: 30px 0 45px;
+  }
+
+  .incident-heading {
+    align-items: flex-start;
+  }
+
+  .incident-label,
+  .incident-date {
+    font-size: 7px;
+    line-height: 1.6;
+  }
+
+  .incident-card {
+    padding: 28px 21px;
+    box-shadow: 5px 6px 0 var(--berry);
+  }
+
+  .incident-copy h2 {
+    font-size: 46px;
+  }
+
+  .quote-paper {
+    padding: 36px 20px 25px;
+  }
+
+  .quote-paper blockquote {
+    font-size: 20px;
+  }
+
+  .quote-attribution {
+    font-size: 18px;
+  }
+
+  .warning-card h2 {
+    font-size: 47px;
+  }
+
+  .warning-footer {
+    gap: 10px;
+  }
+
+  .warning-footer span:last-child {
+    margin-left: 0;
+  }
+
+  .ragebait-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .ragebait-note {
+    min-height: 245px;
+    padding: 25px;
+  }
+
+  .ragebait-note h3 {
+    font-size: 32px;
+  }
+
+  .ragebait-verdict {
+    font-size: 20px;
+  }
+
+  .verdict-section {
+    padding: 45px 0 65px;
+  }
+
+  .verdict-paper {
+    padding: 38px 24px;
+    box-shadow: 6px 7px 0 var(--yellow);
+  }
+
+  .verdict-paper h2 {
+    font-size: 52px;
+  }
+
+  .verdict-star {
+    top: 15px;
+    right: 18px;
+    font-size: 34px;
+  }
+
+  .gossip-bottom-nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .gossip-bottom-nav span {
+    order: 3;
+    width: 100%;
+  }
+
+  .gossip-bottom-nav a {
+    font-size: 8px;
+  }
+
+  .gossip-page .archive-footer {
+    justify-content: center;
+    text-align: center;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gossip-scroll-note span:last-child {
+    animation: none;
+  }
+}
+
+/* Scroll reveal for evidence cards */
+.gossip-reveal {
+  opacity: 0;
+  translate: 0 20px;
+  transition:
+    opacity 600ms ease,
+    translate 600ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.gossip-reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gossip-reveal {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}
+
+.instigator-link {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.instigator-link:hover {
+  transform: rotate(-2deg) scale(1.04);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

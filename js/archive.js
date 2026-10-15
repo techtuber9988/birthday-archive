@@ -47,3 +47,45 @@
     });
   });
 })();
+
+(() => {
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  // Reveal the page when it first opens.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.body.classList.remove("is-entering");
+    });
+  });
+
+  // Animate internal page links before navigation.
+  document.querySelectorAll('a[href$=".html"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.shiftKey ||
+        event.altKey ||
+        link.target === "_blank"
+      ) return;
+
+      const destination = new URL(link.href, window.location.href);
+
+      if (destination.origin !== window.location.origin) return;
+      if (destination.href === window.location.href) return;
+
+      if (reduceMotion) return;
+
+      event.preventDefault();
+      document.body.classList.add("is-leaving");
+
+      window.setTimeout(() => {
+        window.location.href = destination.href;
+      }, 650);
+    });
+  });
+})();
