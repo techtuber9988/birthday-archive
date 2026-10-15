@@ -2,10 +2,11 @@
 {
   "cleanUrls": false,
   "trailingSlash": false,
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
-      "destination": "/pages/index.html"
+      "destination": "/pages/index.html",
+      "permanent": false
     }
   ]
 }
