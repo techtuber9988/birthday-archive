@@ -1890,3 +1890,145 @@ body.little-page::before {
     transform: none;
   }
 }
+
+/* ===== FRIENDSHIP AGREEMENT INVITATION ===== */
+
+.agreement-invitation {
+  width: min(760px, calc(100% - 32px));
+  margin: 30px auto 85px;
+}
+
+.agreement-invitation-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(28px, 5vw, 52px);
+  text-align: center;
+  background: #fff8e9;
+  border: 1px solid #e6cdb0;
+  box-shadow: 7px 8px 0 rgba(153, 103, 64, .10);
+  transform: rotate(-.5deg);
+  transition: transform .35s, box-shadow .35s;
+}
+
+.agreement-invitation-card::before {
+  content: "♡";
+  position: absolute;
+  top: -42px;
+  right: -5px;
+  color: rgba(200, 66, 53, .09);
+  font-family: "Caveat", cursive;
+  font-size: 170px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.agreement-invitation-card:hover {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: 9px 14px 0 rgba(153, 103, 64, .10);
+}
+
+.invitation-sticker {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 8px 10px;
+  border: 1px solid #c84235;
+  color: #c84235;
+  background: #fff0dc;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  transform: rotate(7deg);
+}
+
+.invitation-eyebrow {
+  margin: 0 0 15px;
+  color: #b44738;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.agreement-invitation-card h2 {
+  position: relative;
+  margin: 0;
+  color: #29231f;
+  font-family: "Fraunces", serif;
+  font-size: clamp(31px, 5vw, 45px);
+  line-height: 1.15;
+  letter-spacing: -.04em;
+}
+
+.agreement-invitation-card h2 em {
+  color: #c84235;
+}
+
+.agreement-invitation-card > p:not(.invitation-eyebrow) {
+  position: relative;
+  max-width: 490px;
+  margin: 19px auto 24px;
+  color: #79685a;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.agreement-invitation-button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 19px;
+  color: #fff !important;
+  background: #c84235;
+  box-shadow: 0 4px 0 #a52e25;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .09em;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.agreement-invitation-button span {
+  font-size: 16px;
+}
+
+.agreement-invitation-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 0 #a52e25;
+}
+
+.agreement-invitation-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #a52e25;
+}
+
+.invitation-handwriting {
+  display: block;
+  position: relative;
+  margin-top: 22px;
+  color: #8d725e;
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+}
+
+@media (max-width: 480px) {
+  .agreement-invitation {
+    margin-bottom: 60px;
+  }
+
+  .agreement-invitation-card {
+    padding: 38px 20px 28px;
+  }
+
+  .invitation-sticker {
+    top: 10px;
+    right: 10px;
+    font-size: 7px;
+  }
+
+  .agreement-invitation-button {
+    gap: 8px;
+    padding: 14px 12px;
+    font-size: 8px;
+  }
+}

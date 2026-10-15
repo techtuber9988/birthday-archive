@@ -1218,3 +1218,64 @@ body.letter-page {
     min-height: 47px;
   }
 }
+/* ================================
+   FRIENDSHIP AGREEMENT ENTRY LINK
+================================ */
+
+.agreement-entry-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 28px;
+  padding: 14px 22px;
+
+  background: #fff4dc;
+  color: #a83232;
+  border: 2px dashed #c65b45;
+  border-radius: 5px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.6;
+
+  box-shadow: 4px 5px 0 rgba(168, 50, 50, 0.12);
+  transform: rotate(-1deg);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Hover interaction */
+.agreement-entry-link:hover {
+  background: #a83232;
+  color: #fff8e9;
+
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 6px 9px 0 rgba(168, 50, 50, 0.18);
+}
+
+/* Keyboard accessibility */
+.agreement-entry-link:focus-visible {
+  outline: 3px solid #e6a23c;
+  outline-offset: 5px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .agreement-entry-link {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 16px;
+    font-size: 0.88rem;
+    margin-top: 22px;
+  }
+}
