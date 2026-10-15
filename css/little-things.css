@@ -1,0 +1,1892 @@
+
+/* =========================================
+   THE DARSHIKA ARCHIVE — LITTLE THINGS
+   Personal scrapbook / music / memories
+========================================= */
+
+:root {
+  --lt-bg: #fff4e5;
+  --lt-paper: #fffaf0;
+  --lt-paper-dark: #f5e5cf;
+  --lt-red: #df2447;
+  --lt-burgundy: #741b36;
+  --lt-orange: #f08a36;
+  --lt-yellow: #ffdc7b;
+  --lt-ink: #382720;
+  --lt-muted: #8c7464;
+  --lt-border: #e9d4ba;
+  --lt-shadow: 0 14px 36px rgba(91, 46, 29, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 28px;
+}
+
+body.little-page {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--lt-ink);
+  background:
+    radial-gradient(ellipse at 8% 15%, rgba(255, 220, 123, 0.23), transparent 30%),
+    radial-gradient(ellipse at 94% 44%, rgba(223, 36, 71, 0.07), transparent 28%),
+    var(--lt-bg);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+body.little-page::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  opacity: 0.19;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E");
+}
+
+.little-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.little-page button,
+.little-page input {
+  font: inherit;
+}
+
+.little-page button:focus-visible,
+.little-page a:focus-visible,
+.little-page input:focus-visible {
+  outline: 3px solid var(--lt-orange);
+  outline-offset: 4px;
+}
+
+.section-wrap {
+  width: min(1080px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* =========================================
+   TOP NAVIGATION
+========================================= */
+
+.topbar {
+  min-height: 76px;
+  padding: 18px max(24px, calc((100vw - 1200px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid rgba(116, 27, 54, 0.12);
+}
+
+.back-link,
+.topbar-label,
+.page-number,
+.eyebrow,
+.section-index,
+.chapter-number,
+.song-kicker,
+.player-label,
+.player-kicker,
+.card-number,
+.chat-date,
+.chat-footer > span,
+.notice-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.back-link {
+  color: var(--lt-red) !important;
+  transition: transform 0.2s ease;
+}
+
+.back-link:hover {
+  transform: translateX(-4px);
+}
+
+.back-link span {
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+.topbar-label {
+  color: var(--lt-burgundy);
+}
+
+.page-number {
+  color: var(--lt-muted);
+  text-align: right;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.lt-hero {
+  position: relative;
+  width: min(920px, calc(100% - 40px));
+  min-height: 570px;
+  margin: auto;
+  padding: 83px 0 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--lt-red);
+  margin: 0 0 19px;
+}
+
+.lt-hero h1,
+.section-heading h2,
+.voice-copy h2,
+.closing-section h2,
+.chapter-intro h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+
+.lt-hero h1 {
+  margin: 0;
+  font-size: clamp(48px, 8vw, 91px);
+  line-height: 0.99;
+}
+
+.lt-hero h1 span,
+.section-heading h2 em,
+.voice-copy h2 em,
+.closing-section h2 em,
+.chapter-intro h2 em {
+  color: var(--lt-red);
+  font-weight: 600;
+}
+
+.hero-description {
+  max-width: 590px;
+  margin: 24px 0 0;
+  color: var(--lt-muted);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.hero-note {
+  margin-top: 25px;
+  padding: 10px 18px;
+  background: var(--lt-yellow);
+  border: 1px solid #e9bf59;
+  border-radius: 3px;
+  transform: rotate(-2deg);
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+}
+
+.note-heart {
+  margin-left: 10px;
+  color: var(--lt-red);
+}
+
+.hero-small-note {
+  max-width: 450px;
+  margin: 25px 0 0;
+  color: var(--lt-muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.hero-sticker {
+  position: absolute;
+  font-size: 40px;
+  color: var(--lt-red);
+}
+
+.sticker-star {
+  top: 100px;
+  left: 10%;
+  transform: rotate(-14deg);
+}
+
+.sticker-heart {
+  top: 190px;
+  right: 10%;
+  color: var(--lt-orange);
+  transform: rotate(15deg);
+}
+
+.sticker-spark {
+  bottom: 105px;
+  left: 18%;
+  color: #d69b24;
+  font-size: 26px;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 21px;
+  color: var(--lt-muted) !important;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.scroll-cue span {
+  color: var(--lt-red);
+  margin-left: 8px;
+  font-size: 15px;
+}
+
+/* =========================================
+   CHAPTER INTRO PAPER
+========================================= */
+
+.chapter-intro {
+  padding-top: 8px;
+  padding-bottom: 80px;
+}
+
+.chapter-number {
+  margin-bottom: 18px;
+  color: var(--lt-red);
+  text-align: center;
+}
+
+.intro-paper {
+  position: relative;
+  max-width: 780px;
+  margin: auto;
+  padding: 42px clamp(24px, 5vw, 58px);
+  background: var(--lt-paper);
+  border: 1px solid var(--lt-border);
+  box-shadow: var(--lt-shadow);
+  transform: rotate(-0.3deg);
+}
+
+.intro-paper::before {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 4px;
+  height: 100%;
+  background: rgba(223, 36, 71, 0.15);
+  content: "";
+}
+
+.paper-pin {
+  position: absolute;
+  top: 16px;
+  right: 21px;
+  color: var(--lt-orange);
+  font-size: 23px;
+}
+
+.intro-paper > p:not(.handwritten) {
+  color: #725a4b;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.handwritten {
+  color: var(--lt-burgundy) !important;
+  font-family: "Caveat", cursive;
+  font-size: 25px !important;
+  line-height: 1.5 !important;
+}
+
+.intro-handwriting {
+  margin-top: 0;
+}
+
+.intro-signature {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.section-heading {
+  max-width: 690px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.section-index {
+  display: inline-block;
+  color: var(--lt-red);
+  line-height: 1.7;
+}
+
+.section-heading h2,
+.voice-copy h2,
+.closing-section h2 {
+  margin: 14px 0;
+  font-size: clamp(35px, 5vw, 55px);
+  line-height: 1.12;
+}
+
+.section-heading > p,
+.voice-copy > p,
+.closing-section > p:not(.section-index) {
+  color: var(--lt-muted);
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+/* =========================================
+   MUSIC SECTION
+========================================= */
+
+.music-section {
+  padding-top: 70px;
+  padding-bottom: 85px;
+  border-top: 1px dashed #d9bda0;
+}
+
+.music-intro {
+  max-width: 800px;
+  margin: 0 auto 34px;
+  padding: 18px 23px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(255, 250, 240, 0.75);
+  border: 1px dashed #e0c3a4;
+  border-radius: 8px;
+}
+
+.music-intro-icon {
+  flex: 0 0 39px;
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  background: var(--lt-yellow);
+  color: var(--lt-burgundy);
+  border-radius: 50%;
+  font-size: 21px;
+}
+
+.music-intro p {
+  margin: 0;
+  color: var(--lt-muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.music-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.92fr;
+  align-items: stretch;
+  gap: 28px;
+}
+
+.song-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.song-card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  color: var(--lt-ink);
+  background: rgba(255, 250, 240, 0.82);
+  border: 1px solid var(--lt-border);
+  border-radius: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 0.24s ease,
+    border-color 0.24s ease,
+    box-shadow 0.24s ease,
+    background 0.24s ease;
+}
+
+.song-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--lt-shadow);
+}
+
+.song-card.is-active {
+  background: #fffaf0;
+  border-color: var(--lt-red);
+  box-shadow: 0 7px 22px rgba(116, 27, 54, 0.09);
+}
+
+.song-art {
+  flex: 0 0 62px;
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  font-family: "Caveat", cursive;
+  font-size: 36px;
+}
+
+.art-yellow {
+  background: var(--lt-yellow);
+  color: var(--lt-burgundy);
+  transform: rotate(-3deg);
+}
+
+.art-red {
+  background: var(--lt-red);
+  color: white;
+  transform: rotate(2deg);
+}
+
+.art-orange {
+  background: #f6b16b;
+  color: var(--lt-burgundy);
+  transform: rotate(-2deg);
+}
+
+.song-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.song-kicker {
+  color: var(--lt-red);
+  font-size: 8px;
+}
+
+.song-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.song-subtitle {
+  color: var(--lt-muted);
+  font-size: 11px;
+}
+
+.song-action {
+  flex: 0 0 33px;
+  width: 33px;
+  height: 33px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lt-yellow);
+  color: var(--lt-burgundy);
+  font-size: 11px;
+  transition: background 0.2s ease;
+}
+
+.song-card.is-active .song-action {
+  color: white;
+  background: var(--lt-red);
+}
+
+.song-list-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 5px 0;
+  color: var(--lt-muted);
+}
+
+.song-list-note > span {
+  color: var(--lt-red);
+  font-size: 20px;
+}
+
+.song-list-note p {
+  margin: 0;
+  font-family: "Caveat", cursive;
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+/* MAIN MUSIC PLAYER */
+
+.player-card {
+  position: relative;
+  padding: 27px 28px 23px;
+  overflow: hidden;
+  border: 1px solid #e7c9ad;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 220, 123, 0.38), transparent 45%),
+    #fff9ed;
+  box-shadow: var(--lt-shadow);
+  text-align: center;
+}
+
+.player-topline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.player-label {
+  color: var(--lt-muted);
+  font-size: 9px;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  background: #61a76c;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(97, 167, 108, 0.12);
+}
+
+.vinyl-wrap {
+  position: relative;
+  width: 154px;
+  height: 154px;
+  margin: 24px auto 22px;
+  display: grid;
+  place-items: center;
+}
+
+.vinyl {
+  width: 145px;
+  height: 145px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle,
+    #282221 0,
+    #282221 3px,
+    #38302e 4px,
+    #38302e 6px
+  );
+  box-shadow: 0 9px 22px rgba(56, 39, 32, 0.2);
+}
+
+.vinyl-center {
+  width: 51px;
+  height: 51px;
+  display: grid;
+  place-items: center;
+  border: 4px solid #fff4e5;
+  border-radius: 50%;
+  background: var(--lt-red);
+  color: white;
+  font-size: 24px;
+}
+
+.vinyl.is-playing {
+  animation: spin-vinyl 4s linear infinite;
+}
+
+.vinyl-spark {
+  position: absolute;
+  color: var(--lt-red);
+  font-size: 24px;
+}
+
+.spark-one {
+  top: 0;
+  right: 0;
+}
+
+.spark-two {
+  bottom: 8px;
+  left: -2px;
+  color: var(--lt-orange);
+}
+
+@keyframes spin-vinyl {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.player-kicker {
+  margin: 0 0 7px;
+  color: var(--lt-red);
+  font-size: 9px;
+}
+
+.player-card h3 {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(22px, 3vw, 29px);
+  letter-spacing: -0.04em;
+}
+
+.player-message {
+  min-height: 20px;
+  margin: 9px 0 20px;
+  color: var(--lt-muted);
+  font-size: 12px;
+}
+
+.progress-area {
+  margin-top: 8px;
+}
+
+.progress-slider {
+  width: 100%;
+  height: 5px;
+  display: block;
+  accent-color: var(--lt-red);
+  cursor: pointer;
+}
+
+.time-row {
+  margin-top: 7px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--lt-muted);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.player-controls {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.control-button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.control-button:hover {
+  transform: scale(1.08);
+}
+
+.play-control {
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background: var(--lt-red);
+  color: white;
+  font-size: 17px;
+  box-shadow: 0 6px 15px rgba(223, 36, 71, 0.23);
+}
+
+.secondary-control {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #f3e2ce;
+  color: var(--lt-burgundy);
+  font-size: 19px;
+}
+
+.player-status {
+  min-height: 18px;
+  margin: 16px 0 0;
+  color: var(--lt-red);
+  font-size: 11px;
+}
+
+.player-footnote {
+  margin: 13px 0 0;
+  color: var(--lt-muted);
+  font-family: "Caveat", cursive;
+  font-size: 17px;
+}
+
+.tiny-caption {
+  margin: 30px 0 0;
+  color: var(--lt-muted);
+  font-family: "Caveat", cursive;
+  font-size: 23px;
+  text-align: center;
+}
+
+/* SONG STORIES */
+
+.song-stories {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 19px;
+}
+
+.song-story {
+  position: relative;
+  padding: 27px 23px 24px;
+  border: 1px solid var(--lt-border);
+  box-shadow: 0 8px 23px rgba(91, 46, 29, 0.055);
+  transition: transform 0.25s ease;
+}
+
+.song-story:hover {
+  transform: translateY(-4px) rotate(-0.5deg);
+}
+
+.story-yellow {
+  background: #fff0bf;
+}
+
+.story-pink {
+  background: #ffe4e1;
+}
+
+.story-orange {
+  background: #ffe6c8;
+}
+
+.story-number {
+  color: var(--lt-red);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.song-story h3 {
+  margin: 16px 0 13px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 23px;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.song-story > p:not(.handwritten) {
+  color: #755d4e;
+  font-size: 12px;
+  line-height: 1.95;
+}
+
+.song-story .handwritten {
+  margin-top: 19px;
+  font-size: 20px !important;
+}
+
+/* =========================================
+   PERSONAL RECORDING
+========================================= */
+
+.voice-section {
+  padding-top: 15px;
+  padding-bottom: 90px;
+}
+
+.voice-paper {
+  position: relative;
+  padding: 55px clamp(22px, 6vw, 70px) 42px;
+  border: 1px solid #e8d4b9;
+  background: var(--lt-paper);
+  box-shadow: var(--lt-shadow);
+  transform: rotate(-0.3deg);
+}
+
+.tape {
+  position: absolute;
+  top: -11px;
+  width: 95px;
+  height: 25px;
+  background: rgba(255, 220, 123, 0.78);
+  opacity: 0.9;
+}
+
+.tape-left {
+  left: 8%;
+  transform: rotate(-8deg);
+}
+
+.tape-right {
+  right: 8%;
+  background: rgba(240, 138, 54, 0.36);
+  transform: rotate(7deg);
+}
+
+.voice-copy {
+  max-width: 710px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.voice-copy h2 {
+  font-size: clamp(37px, 5vw, 57px);
+}
+
+.voice-copy > p {
+  max-width: 650px;
+  margin: 16px auto;
+}
+
+.voice-player {
+  max-width: 660px;
+  margin: 35px auto 0;
+  padding: 21px;
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  background: #fff2df;
+  border: 1px dashed #d9bda0;
+  border-radius: 10px;
+}
+
+.voice-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: var(--lt-yellow);
+  color: var(--lt-burgundy);
+  border-radius: 9px;
+  font-size: 24px;
+}
+
+.voice-track {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.voice-track strong {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 17px;
+}
+
+.voice-track span {
+  color: var(--lt-muted);
+  font-size: 11px;
+}
+
+.voice-heart {
+  color: var(--lt-red);
+  font-size: 21px;
+}
+
+.voice-player audio {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 7px;
+}
+
+.audio-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--lt-muted);
+  font-size: 11px;
+}
+
+.voice-bottom-note {
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+.voice-doodle {
+  position: absolute;
+  right: 8%;
+  bottom: 16px;
+  color: var(--lt-red);
+  font-size: 33px;
+}
+
+/* =========================================
+   SICKNESS CASE FILE
+========================================= */
+
+.coincidence-section {
+  padding-top: 15px;
+  padding-bottom: 90px;
+}
+
+.case-intro {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  padding: 23px 29px;
+  background: rgba(255, 250, 240, 0.78);
+  border-left: 3px solid var(--lt-orange);
+}
+
+.case-intro > p:not(.handwritten) {
+  color: var(--lt-muted);
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.case-intro .handwritten {
+  margin-top: 0;
+}
+
+.coincidence-grid {
+  display: grid;
+  grid-template-columns: 1fr 30px 1fr 30px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.coincidence-card {
+  min-height: 230px;
+  padding: 22px 18px;
+  background: var(--lt-paper);
+  border: 1px solid var(--lt-border);
+  border-radius: 9px;
+  box-shadow: 0 7px 20px rgba(91, 46, 29, 0.045);
+  transition: transform 0.2s ease;
+}
+
+.coincidence-card:hover {
+  transform: translateY(-4px) rotate(-1deg);
+}
+
+.card-number {
+  color: var(--lt-red);
+  font-size: 8px;
+}
+
+.case-emoji {
+  display: block;
+  margin: 17px 0 9px;
+  font-size: 27px;
+}
+
+.coincidence-card h3 {
+  margin: 0 0 8px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 20px;
+}
+
+.coincidence-card p {
+  margin: 0;
+  color: var(--lt-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.suspicious-card {
+  background: #ffebd2;
+  border-color: #e9bc83;
+}
+
+.case-arrow {
+  color: var(--lt-red);
+  font-size: 23px;
+  text-align: center;
+}
+
+.case-verdict {
+  max-width: 700px;
+  margin: 34px auto 0;
+  padding: 23px 27px;
+  background: var(--lt-yellow);
+  text-align: center;
+  transform: rotate(-0.5deg);
+}
+
+.verdict-stamp {
+  display: inline-block;
+  padding: 7px 12px;
+  border: 1px solid var(--lt-red);
+  color: var(--lt-red);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  transform: rotate(-3deg);
+}
+
+.case-verdict > p:not(.handwritten) {
+  color: #73543f;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.case-verdict .handwritten {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   TEXTING DEPARTMENT
+========================================= */
+
+.texting-section {
+  padding-top: 10px;
+  padding-bottom: 90px;
+}
+
+.texting-story {
+  max-width: 760px;
+  margin: 0 auto 30px;
+}
+
+.texting-story p {
+  color: var(--lt-muted);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.chat-paper {
+  max-width: 680px;
+  margin: auto;
+  overflow: hidden;
+  background: #fffaf0;
+  border: 1px solid var(--lt-border);
+  border-radius: 12px;
+  box-shadow: var(--lt-shadow);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 18px 23px;
+  border-bottom: 1px solid var(--lt-border);
+}
+
+.chat-avatar {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: var(--lt-yellow);
+  color: var(--lt-burgundy);
+  border-radius: 50%;
+  font-family: "Caveat", cursive;
+  font-size: 26px;
+}
+
+.chat-header > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chat-header strong {
+  font-size: 13px;
+}
+
+.chat-header > div span {
+  color: var(--lt-muted);
+  font-size: 10px;
+}
+
+.chat-dots {
+  color: var(--lt-red);
+  letter-spacing: 3px;
+}
+
+.chat-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chat-date {
+  margin-bottom: 4px;
+  color: var(--lt-muted);
+  text-align: center;
+  font-size: 8px;
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.chat-bubble span {
+  display: block;
+  margin-top: 5px;
+  font-size: 9px;
+  opacity: 0.72;
+}
+
+.chat-bubble.me {
+  align-self: flex-end;
+  background: #ffdf9a;
+  border-bottom-right-radius: 3px;
+}
+
+.chat-bubble.her {
+  align-self: flex-start;
+  background: #f5e5cf;
+  border-bottom-left-radius: 3px;
+}
+
+.chat-time-note {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #a78d79;
+  font-size: 10px;
+}
+
+.chat-time-note span:first-child,
+.chat-time-note span:last-child {
+  letter-spacing: 2px;
+}
+
+.chat-footer {
+  padding: 22px 25px;
+  background: #fff0d9;
+  border-top: 1px dashed #d9bda0;
+}
+
+.chat-footer > span {
+  color: var(--lt-red);
+  font-size: 9px;
+}
+
+.chat-footer p {
+  margin: 9px 0 0;
+  color: var(--lt-muted);
+  font-size: 12px;
+  line-height: 1.95;
+}
+
+.chat-footer .handwritten {
+  font-size: 22px !important;
+}
+
+/* =========================================
+   THINGS I NOTICE
+========================================= */
+
+.notice-section {
+  padding-top: 12px;
+  padding-bottom: 90px;
+  border-top: 1px dashed #d9bda0;
+}
+
+.notice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.notice-card {
+  position: relative;
+  min-height: 260px;
+  padding: 29px 27px 25px;
+  border: 1px solid var(--lt-border);
+  box-shadow: 0 8px 24px rgba(91, 46, 29, 0.05);
+  transition: transform 0.25s ease;
+}
+
+.notice-card:hover {
+  transform: translateY(-4px) rotate(-0.4deg);
+}
+
+.notice-one {
+  background: #fff0bf;
+}
+
+.notice-two {
+  background: #ffe4e1;
+}
+
+.notice-three {
+  background: #ffe6c8;
+}
+
+.notice-four {
+  background: #f5e8d5;
+}
+
+.notice-icon {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 27px;
+}
+
+.notice-label {
+  display: block;
+  color: var(--lt-red);
+  font-size: 8px;
+}
+
+.notice-card h3 {
+  margin: 12px 0 10px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.notice-card p {
+  color: #755d4e;
+  font-size: 12px;
+  line-height: 1.95;
+}
+
+.notice-card .handwritten {
+  display: block;
+  margin-top: 18px;
+  font-size: 21px !important;
+}
+
+/* =========================================
+   MADAM'S RULEBOOK
+========================================= */
+
+.rulebook-section {
+  padding-bottom: 90px;
+}
+
+.rulebook-paper {
+  position: relative;
+  max-width: 840px;
+  margin: auto;
+  padding: 50px clamp(24px, 6vw, 60px) 37px;
+  background: var(--lt-paper);
+  border: 1px solid var(--lt-border);
+  box-shadow: var(--lt-shadow);
+}
+
+.rulebook-sticker {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  padding: 9px 12px;
+  background: var(--lt-yellow);
+  color: var(--lt-red);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  transform: rotate(7deg);
+}
+
+.rulebook-paper h2 {
+  margin: 15px 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(33px, 5vw, 48px);
+  letter-spacing: -0.05em;
+  line-height: 1.12;
+}
+
+.rulebook-paper h2 em {
+  color: var(--lt-red);
+}
+
+.rulebook-intro {
+  max-width: 600px;
+  color: var(--lt-muted);
+  font-size: 12px;
+  line-height: 1.95;
+}
+
+.rule-list {
+  margin: 29px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rule-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 17px 0;
+  border-bottom: 1px dashed #e5cbb0;
+}
+
+.rule-number {
+  flex: 0 0 35px;
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  background: var(--lt-yellow);
+  color: var(--lt-burgundy);
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.rule-list li > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rule-list strong {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 16px;
+}
+
+.rule-list small {
+  color: var(--lt-muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.rulebook-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.rulebook-footer .handwritten {
+  font-size: 21px !important;
+}
+
+.rule-stamp {
+  padding: 10px 12px;
+  border: 2px solid var(--lt-red);
+  color: var(--lt-red);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  transform: rotate(-3deg);
+}
+
+/* =========================================
+   CLOSING SECTION
+========================================= */
+
+.closing-section {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 45px;
+  border-top: 1px dashed #d9bda0;
+  text-align: center;
+}
+
+.closing-star {
+  display: block;
+  margin-bottom: 17px;
+  color: var(--lt-orange);
+  font-size: 38px;
+}
+
+.closing-section h2 {
+  font-size: clamp(36px, 5vw, 58px);
+}
+
+.closing-section > p:not(.section-index) {
+  max-width: 640px;
+  margin: 18px auto;
+}
+
+.closing-handwritten {
+  margin-top: 26px !important;
+}
+
+.closing-stamp {
+  display: inline-block;
+  margin: 22px 0 42px;
+  padding: 12px 20px;
+  border: 2px solid var(--lt-red);
+  border-radius: 4px;
+  color: var(--lt-red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  transform: rotate(-3deg);
+}
+
+.page-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-pill {
+  min-height: 45px;
+  padding: 0 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--lt-red);
+  border-radius: 999px;
+  color: var(--lt-red) !important;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.nav-pill:hover {
+  transform: translateY(-3px);
+  background: #ffebd2;
+}
+
+.next-pill {
+  background: var(--lt-yellow);
+}
+
+.closing-footer {
+  margin-top: 38px !important;
+  font-family: "Caveat", cursive;
+  font-size: 18px !important;
+}
+
+/* =========================================
+   REVEAL ANIMATIONS
+========================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   PAGE TRANSITION
+========================================= */
+
+.little-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: var(--lt-red);
+  color: white;
+  font-family: "Caveat", cursive;
+  font-size: 38px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.little-transition.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .music-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .song-list {
+    max-width: 620px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .player-card {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .song-stories {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+
+  .song-story {
+    padding: 25px;
+  }
+
+  .coincidence-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-inline: auto;
+    gap: 12px;
+  }
+
+  .coincidence-card {
+    min-height: auto;
+  }
+
+  .case-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+  .topbar {
+    padding: 17px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .topbar-label {
+    display: none;
+  }
+
+  .page-number {
+    margin-left: auto;
+    font-size: 8px;
+  }
+
+  .lt-hero {
+    min-height: 535px;
+    padding-top: 82px;
+  }
+
+  .lt-hero h1 {
+    font-size: clamp(48px, 11vw, 76px);
+  }
+
+  .hero-description {
+    max-width: 480px;
+    font-size: 13px;
+  }
+
+  .sticker-star {
+    top: 55px;
+    left: 3%;
+  }
+
+  .sticker-heart {
+    top: 170px;
+    right: 3%;
+  }
+
+  .sticker-spark {
+    bottom: 115px;
+    left: 5%;
+  }
+
+  .music-intro {
+    padding: 16px;
+  }
+
+  .notice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notice-card {
+    min-height: auto;
+  }
+
+  .voice-paper {
+    padding-top: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-wrap {
+    width: calc(100% - 30px);
+  }
+
+  .lt-hero {
+    min-height: 550px;
+    padding-top: 83px;
+  }
+
+  .eyebrow,
+  .section-index {
+    font-size: 8px;
+  }
+
+  .lt-hero h1 {
+    font-size: 47px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+    line-height: 1.85;
+  }
+
+  .hero-note {
+    font-size: 20px;
+  }
+
+  .hero-small-note {
+    max-width: 290px;
+  }
+
+  .hero-sticker {
+    font-size: 29px;
+  }
+
+  .sticker-star {
+    top: 48px;
+    left: 1%;
+  }
+
+  .sticker-heart {
+    top: 145px;
+    right: 1%;
+  }
+
+  .chapter-intro,
+  .music-section,
+  .coincidence-section,
+  .texting-section,
+  .notice-section {
+    padding-bottom: 55px;
+  }
+
+  .intro-paper {
+    padding: 37px 22px 28px 30px;
+  }
+
+  .intro-paper::before {
+    left: 16px;
+  }
+
+  .intro-paper > p:not(.handwritten) {
+    font-size: 12px;
+  }
+
+  .section-heading {
+    margin-bottom: 26px;
+  }
+
+  .section-heading h2,
+  .voice-copy h2,
+  .closing-section h2 {
+    font-size: 36px;
+  }
+
+  .section-heading > p {
+    font-size: 12px;
+  }
+
+  .music-intro {
+    gap: 11px;
+  }
+
+  .music-intro-icon {
+    flex-basis: 33px;
+    width: 33px;
+    height: 33px;
+  }
+
+  .music-intro p {
+    font-size: 11px;
+  }
+
+  .song-card {
+    gap: 12px;
+    padding: 13px 11px;
+  }
+
+  .song-art {
+    flex-basis: 51px;
+    width: 51px;
+    height: 51px;
+    font-size: 30px;
+  }
+
+  .song-title {
+    font-size: 15px;
+  }
+
+  .song-subtitle {
+    font-size: 10px;
+  }
+
+  .song-kicker {
+    font-size: 7px;
+  }
+
+  .song-action {
+    flex-basis: 29px;
+    width: 29px;
+    height: 29px;
+  }
+
+  .player-card {
+    padding: 23px 17px;
+  }
+
+  .song-story {
+    padding: 22px 19px;
+  }
+
+  .song-story h3 {
+    font-size: 21px;
+  }
+
+  .song-story > p:not(.handwritten) {
+    font-size: 11px;
+  }
+
+  .voice-section {
+    padding-bottom: 65px;
+  }
+
+  .voice-paper {
+    padding: 42px 17px 35px;
+  }
+
+  .voice-copy > p {
+    font-size: 12px;
+  }
+
+  .voice-player {
+    grid-template-columns: 40px 1fr auto;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .voice-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .voice-track strong {
+    font-size: 13px;
+  }
+
+  .voice-track span {
+    font-size: 9px;
+  }
+
+  .voice-bottom-note {
+    font-size: 21px !important;
+  }
+
+  .case-intro {
+    padding: 18px;
+  }
+
+  .case-intro > p:not(.handwritten) {
+    font-size: 12px;
+  }
+
+  .coincidence-card {
+    padding: 19px;
+  }
+
+  .case-verdict {
+    padding: 20px 16px;
+  }
+
+  .texting-story p {
+    font-size: 12px;
+  }
+
+  .chat-header {
+    padding: 15px;
+  }
+
+  .chat-body {
+    padding: 19px 14px;
+  }
+
+  .chat-bubble {
+    max-width: 91%;
+    font-size: 12px;
+  }
+
+  .chat-footer {
+    padding: 18px;
+  }
+
+  .chat-footer p {
+    font-size: 11px;
+  }
+
+  .notice-card {
+    padding: 23px 20px;
+  }
+
+  .notice-card h3 {
+    font-size: 23px;
+  }
+
+  .rulebook-paper {
+    padding: 47px 20px 27px;
+  }
+
+  .rulebook-sticker {
+    top: 12px;
+    right: 10px;
+    font-size: 7px;
+  }
+
+  .rulebook-paper h2 {
+    font-size: 34px;
+  }
+
+  .rulebook-intro {
+    font-size: 11px;
+  }
+
+  .rule-list li {
+    gap: 11px;
+  }
+
+  .rule-number {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .rule-list strong {
+    font-size: 14px;
+  }
+
+  .rule-list small {
+    font-size: 10px;
+  }
+
+  .rulebook-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .page-navigation {
+    flex-direction: column;
+  }
+
+  .nav-pill {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .little-page *,
+  .little-page *::before,
+  .little-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

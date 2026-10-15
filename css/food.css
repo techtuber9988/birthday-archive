@@ -1,0 +1,1239 @@
+
+:root {
+  --food-paper: #fbefdc;
+  --food-light: #fff8eb;
+  --food-ink: #741b36;
+  --food-red: #d71946;
+  --food-red-dark: #a40f34;
+  --food-yellow: #ffda79;
+  --food-orange: #ef9149;
+  --food-muted: #915365;
+  --food-line: #dfbca4;
+  --food-shadow: 0 13px 25px rgba(93, 34, 35, 0.11);
+}
+
+.food-page {
+  background:
+    radial-gradient(ellipse at 8% 7%, rgba(255, 255, 255, .55), transparent 35%),
+    radial-gradient(ellipse at 90% 44%, rgba(239, 145, 73, .12), transparent 36%),
+    var(--food-paper);
+  color: var(--food-ink);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+.food-page *,
+.food-page *::before,
+.food-page *::after {
+  box-sizing: border-box;
+}
+
+.food-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.food-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  opacity: .12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.20'/%3E%3C/svg%3E");
+}
+
+.food-header,
+.food-page main,
+.food-footer {
+  width: min(1180px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* HEADER */
+
+.food-header {
+  min-height: 66px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid var(--food-line);
+  position: relative;
+  z-index: 2;
+}
+
+.food-back,
+.food-date,
+.food-brand {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.food-back {
+  justify-self: start;
+  transition: color .25s ease, transform .25s ease;
+}
+
+.food-back:hover {
+  color: var(--food-red);
+  transform: translateX(-4px);
+}
+
+.food-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.food-brand-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--food-red);
+  color: white;
+  font-size: 19px;
+}
+
+.food-date {
+  justify-self: end;
+  color: var(--food-red);
+}
+
+/* HERO */
+
+.food-hero {
+  min-height: 450px;
+  padding: 45px 3% 45px;
+  display: grid;
+  grid-template-columns: 1fr .95fr;
+  align-items: center;
+  gap: 35px;
+  position: relative;
+}
+
+.food-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.food-number {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 48% 52% 44% 56%;
+  background: var(--food-ink);
+  color: white;
+  font-weight: 700;
+  transform: rotate(-8deg);
+  margin-bottom: 16px;
+}
+
+.food-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .17em;
+  line-height: 1.8;
+  color: var(--food-muted);
+}
+
+.food-hero h1 {
+  margin: 9px 0 18px;
+  font-family: "Fraunces", serif;
+  font-size: clamp(54px, 7vw, 87px);
+  line-height: .88;
+  letter-spacing: -.065em;
+  color: var(--food-ink);
+}
+
+.food-hero h1 span {
+  color: var(--food-red);
+}
+
+.food-hero h1 sup {
+  font-family: "DM Sans", sans-serif;
+  font-size: .19em;
+  vertical-align: top;
+  letter-spacing: 0;
+}
+
+.food-intro {
+  max-width: 400px;
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.65;
+  margin: 20px 0 21px;
+}
+
+.food-button {
+  min-height: 47px;
+  padding: 0 22px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid var(--food-red);
+  border-radius: 10px;
+  background: var(--food-red);
+  color: white !important;
+  box-shadow: 0 5px 0 rgba(117, 27, 54, .13);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.food-button:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  box-shadow: 0 10px 18px rgba(117, 27, 54, .17);
+  background: var(--food-red-dark);
+}
+
+.food-button span {
+  font-size: 18px;
+}
+
+.food-handwriting {
+  font-family: "Caveat", cursive;
+  font-weight: 600;
+}
+
+.food-hero-note {
+  position: absolute;
+  left: min(350px, 75%);
+  bottom: -21px;
+  color: var(--food-red);
+  font-size: 23px;
+  line-height: 1;
+  transform: rotate(-8deg);
+}
+
+/* FOOD COLLAGE */
+
+.food-hero-art {
+  min-height: 340px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.food-polaroid {
+  width: min(290px, 72%);
+  padding: 14px 14px 20px;
+  position: relative;
+  z-index: 1;
+  background: #fff9ee;
+  box-shadow: 0 13px 23px rgba(80, 33, 39, .17);
+  transform: rotate(-7deg);
+  transition: transform .4s ease;
+}
+
+.food-polaroid:hover {
+  transform: rotate(-2deg) translateY(-6px);
+}
+
+.food-tape {
+  position: absolute;
+  z-index: 2;
+  top: -12px;
+  left: 36%;
+  width: 85px;
+  height: 25px;
+  background: rgba(225, 77, 91, .55);
+  transform: rotate(-5deg);
+}
+
+.food-pizza-art {
+  min-height: 230px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #d6b39a, #f0d6b2);
+}
+
+.pizza-board {
+  position: absolute;
+  width: 90%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #6c3928;
+  box-shadow: 0 9px 15px rgba(76, 40, 27, .24);
+}
+
+.pizza {
+  width: 82%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 10px solid #bd6b31;
+  background:
+    radial-gradient(circle at 28% 27%, #b72d35 0 5px, transparent 6px),
+    radial-gradient(circle at 69% 32%, #b72d35 0 5px, transparent 6px),
+    radial-gradient(circle at 48% 65%, #b72d35 0 5px, transparent 6px),
+    radial-gradient(circle at 25% 70%, #a32c31 0 4px, transparent 5px),
+    radial-gradient(circle at 76% 72%, #a32c31 0 4px, transparent 5px),
+    repeating-conic-gradient(from 5deg, #f4cb66 0deg 15deg, #e8a94e 16deg 29deg);
+  position: relative;
+  z-index: 1;
+  box-shadow: inset 0 0 0 5px #f2bd58, 0 5px 9px rgba(76, 40, 27, .22);
+  transform: rotate(-12deg);
+}
+
+.pizza::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 2px dashed rgba(158, 75, 39, .35);
+  border-radius: 50%;
+}
+
+.pizza-topping {
+  position: absolute;
+  width: 17px;
+  height: 11px;
+  border-radius: 50%;
+  background: #a52d35;
+  border: 2px solid #d65b40;
+}
+
+.topping-one { top: 18%; left: 30%; }
+.topping-two { top: 31%; right: 19%; }
+.topping-three { top: 55%; left: 17%; }
+.topping-four { top: 68%; right: 25%; }
+.topping-five { top: 44%; left: 48%; }
+.topping-six { top: 17%; right: 35%; }
+
+.food-polaroid > p {
+  margin: 12px 0 0;
+  font-family: "Caveat", cursive;
+  text-align: center;
+  font-size: 22px;
+}
+
+.food-sticky {
+  position: absolute;
+  top: 28px;
+  right: -1px;
+  z-index: 3;
+  width: 150px;
+  padding: 19px 15px;
+  background: #ffda79;
+  box-shadow: 4px 9px 16px rgba(91, 54, 34, .13);
+  transform: rotate(8deg);
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.food-sticky p {
+  margin: 3px 0 7px;
+}
+
+.food-sticky .pending-mini {
+  font-size: 19px;
+  color: var(--food-red);
+  margin-top: 12px;
+}
+
+.food-doodle {
+  position: absolute;
+}
+
+.food-cherry {
+  top: 0;
+  right: 13%;
+  font-size: 27px;
+}
+
+.food-side-note {
+  position: absolute;
+  right: -10px;
+  bottom: 1px;
+  color: var(--food-red);
+  font-size: 21px;
+  line-height: 1;
+  text-align: center;
+  transform: rotate(7deg);
+}
+
+.food-pizza-doodle {
+  position: absolute;
+  bottom: 47px;
+  right: 19%;
+  font-size: 40px;
+  color: var(--food-orange);
+  transform: rotate(15deg);
+}
+
+.food-hero-spark {
+  position: absolute;
+  color: var(--food-orange);
+  font-size: 34px;
+}
+
+.spark-one { top: 48px; left: 0; }
+.spark-two { bottom: 18px; right: 4%; font-size: 42px; color: var(--food-red); }
+
+/* SECTION HEADING */
+
+.food-journey {
+  padding: 25px 0 70px;
+  scroll-margin-top: 25px;
+}
+
+.food-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.food-ribbon {
+  display: inline-block;
+  padding: 12px 25px;
+  color: white;
+  background: var(--food-red);
+  font-family: "Caveat", cursive;
+  font-size: 23px;
+  line-height: 1;
+  letter-spacing: .06em;
+  transform: rotate(-3deg);
+  clip-path: polygon(2% 8%, 96% 0, 100% 15%, 97% 85%, 100% 100%, 4% 93%, 0 80%);
+}
+
+.food-section-heading > p {
+  color: var(--food-red);
+  font-size: 22px;
+  transform: rotate(-3deg);
+}
+
+/* SIX MEMORY CARDS */
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 29px 26px;
+}
+
+.food-card {
+  min-height: 275px;
+  position: relative;
+  padding: 36px 24px 25px;
+  border: 1px solid rgba(220, 185, 155, .55);
+  background:
+    radial-gradient(circle at 94% 5%, rgba(225, 180, 129, .12), transparent 32%),
+    var(--food-light);
+  box-shadow: var(--food-shadow);
+  clip-path: polygon(2% 1%, 98% 0, 100% 4%, 98% 95%, 94% 100%, 2% 98%, 0 92%, 1% 6%);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-6px) rotate(0deg) !important;
+  box-shadow: 0 18px 30px rgba(93, 34, 35, .15);
+}
+
+.food-card-one { transform: rotate(-1.2deg); }
+.food-card-two { transform: rotate(1.3deg); }
+.food-card-three { transform: rotate(-.8deg); }
+.food-card-four { transform: rotate(1.1deg); }
+.food-card-five { transform: rotate(-1.5deg); }
+.food-card-six { transform: rotate(1.2deg); }
+
+.food-step {
+  position: absolute;
+  top: 16px;
+  left: 19px;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--food-ink);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.food-card-icon {
+  position: absolute;
+  top: 18px;
+  right: 21px;
+  color: var(--food-orange);
+  font-size: 31px;
+  line-height: 1;
+}
+
+.food-card h2 {
+  max-width: 90%;
+  font-family: "Caveat", cursive;
+  font-size: clamp(25px, 2.5vw, 32px);
+  line-height: 1.05;
+  margin: 13px 0 17px;
+  text-decoration: underline;
+  text-decoration-color: rgba(215, 25, 70, .4);
+  text-underline-offset: 7px;
+  text-decoration-thickness: 1px;
+}
+
+.food-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.food-card li {
+  position: relative;
+  padding-left: 14px;
+  margin: 11px 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #713b4a;
+}
+
+.food-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--food-red);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.food-card > p {
+  margin: 21px 0 0;
+  color: var(--food-red);
+  font-size: 21px;
+  line-height: 1.1;
+}
+
+/* DOMINO'S RECEIPT */
+
+.food-promise-section {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: clamp(35px, 7vw, 85px);
+  padding: 35px 4% 85px;
+}
+
+.food-receipt {
+  width: min(100%, 370px);
+  justify-self: center;
+  position: relative;
+  padding: 28px 25px 30px;
+  background: #fffaf0;
+  box-shadow: 0 13px 27px rgba(93, 34, 35, .16);
+  transform: rotate(-2deg);
+  clip-path: polygon(0 0, 100% 0, 100% 98%, 96% 100%, 92% 98%, 88% 100%, 84% 98%, 80% 100%, 76% 98%, 72% 100%, 68% 98%, 64% 100%, 60% 98%, 56% 100%, 52% 98%, 48% 100%, 44% 98%, 40% 100%, 36% 98%, 32% 100%, 28% 98%, 24% 100%, 20% 98%, 16% 100%, 12% 98%, 8% 100%, 4% 98%, 0 100%);
+}
+
+.receipt-top {
+  text-align: center;
+}
+
+.receipt-star {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--food-red);
+  color: white;
+  font-size: 24px;
+}
+
+.receipt-top > p {
+  margin: 9px 0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.receipt-top h2 {
+  margin: 12px 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: .08em;
+}
+
+.receipt-divider {
+  display: block;
+  overflow: hidden;
+  color: var(--food-muted);
+  letter-spacing: .13em;
+  white-space: nowrap;
+  margin: 17px 0;
+}
+
+.receipt-row,
+.receipt-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 17px 0;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.receipt-row > span,
+.receipt-total > span {
+  color: var(--food-muted);
+}
+
+.receipt-row strong {
+  text-align: right;
+  max-width: 58%;
+}
+
+.receipt-pending {
+  color: var(--food-red);
+}
+
+.receipt-total {
+  align-items: center;
+  font-size: 12px;
+}
+
+.receipt-total strong {
+  font-size: 14px;
+  text-align: right;
+}
+
+.receipt-stamp {
+  width: 115px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: absolute;
+  top: 56%;
+  right: 15px;
+  border: 3px double var(--food-red);
+  color: var(--food-red);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  transform: rotate(13deg);
+  opacity: .82;
+}
+
+.receipt-signature {
+  margin: 28px 0 10px;
+  font-size: 22px;
+  color: var(--food-red);
+}
+
+.receipt-footnote {
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px dashed var(--food-line);
+  font-size: 9px;
+  line-height: 1.6;
+  color: var(--food-muted);
+}
+
+.food-ribbon-small {
+  padding: 10px 17px;
+  font-size: 17px;
+}
+
+.food-promise-copy h2 {
+  margin: 25px 0 20px;
+  font-family: "Fraunces", serif;
+  font-size: clamp(36px, 4.6vw, 54px);
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+
+.food-promise-copy > p:not(.food-promise-line):not(.food-status-message) {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #6f3a49;
+}
+
+.food-promise-line {
+  margin: 24px 0;
+  color: var(--food-red);
+  font-size: 27px;
+  transform: rotate(-3deg);
+}
+
+.food-stamp-button {
+  border-radius: 7px;
+}
+
+.food-status-message {
+  min-height: 25px;
+  margin: 12px 0 0;
+  color: var(--food-red);
+  font-family: "Caveat", cursive;
+  font-size: 23px;
+}
+
+/* CLOSING SCENE */
+
+.food-ending {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: clamp(35px, 6vw, 75px);
+  padding: 25px 2% 80px;
+}
+
+.food-ending-art {
+  min-height: 315px;
+  padding: 22px;
+  position: relative;
+  background: #fff8eb;
+  box-shadow: var(--food-shadow);
+  transform: rotate(-2deg);
+}
+
+.food-ending-night {
+  min-height: 270px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #171c3d, #4a3658 65%, #b35c64);
+}
+
+.ending-star {
+  position: absolute;
+  color: #fff0bf;
+}
+
+.ending-star-one { top: 15%; left: 18%; }
+.ending-star-two { top: 25%; right: 22%; font-size: 27px; }
+
+.ending-moon {
+  position: absolute;
+  top: 15%;
+  right: 27%;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffe8ac;
+  box-shadow: 0 0 24px rgba(255, 232, 172, .3);
+}
+
+.ending-window {
+  position: absolute;
+  top: 13%;
+  left: 12%;
+  right: 12%;
+  height: 53%;
+  border: 7px solid #a9625a;
+  background: linear-gradient(#1c2449, #9d5d72);
+  box-shadow: inset 0 0 0 3px #f4ba83;
+}
+
+.ending-window::before,
+.ending-window::after {
+  content: "";
+  position: absolute;
+  background: #d9956e;
+}
+
+.ending-window::before {
+  width: 5px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+}
+
+.ending-window::after {
+  height: 5px;
+  left: 0;
+  right: 0;
+  top: 50%;
+}
+
+.ending-table {
+  position: absolute;
+  z-index: 2;
+  left: 6%;
+  right: 6%;
+  bottom: 10%;
+  height: 48px;
+  border-radius: 5px;
+  background: #7d3c4f;
+  box-shadow: 0 -9px 0 #b86b64;
+}
+
+.ending-pizza {
+  position: absolute;
+  left: 28%;
+  top: -26px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 7px solid #b96735;
+  background: repeating-conic-gradient(#f5cc70 0deg 22deg, #e9a34d 23deg 42deg);
+  box-shadow: inset 0 0 0 3px #f7df91;
+}
+
+.ending-cup {
+  position: absolute;
+  right: 20%;
+  top: -17px;
+  width: 28px;
+  height: 35px;
+  border-radius: 3px 3px 8px 8px;
+  background: #f3c87a;
+  border: 3px solid #fff0c8;
+}
+
+.food-ending-caption {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  z-index: 3;
+  padding: 7px 12px;
+  background: var(--food-yellow);
+  color: var(--food-ink);
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+  transform: rotate(-3deg);
+}
+
+.food-ending-copy > .food-handwriting {
+  font-size: 24px;
+  color: var(--food-red);
+}
+
+.food-ending-copy h2 {
+  margin: 17px 0 22px;
+  font-family: "Fraunces", serif;
+  font-size: clamp(36px, 4.4vw, 54px);
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+
+.food-ending-copy > p:not(.food-handwriting) {
+  color: #6f3a49;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.food-ending-copy .food-ending-signoff {
+  margin-top: 23px;
+  font-size: 28px;
+  transform: rotate(-3deg);
+}
+
+/* NAVIGATION AND FOOTER */
+
+.food-navigation {
+  padding: 25px 0 38px;
+  border-top: 1px solid var(--food-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.food-navigation > p {
+  font-size: 23px;
+  color: var(--food-red);
+}
+
+.food-button-outline {
+  color: var(--food-red) !important;
+  background: transparent;
+  box-shadow: none;
+}
+
+.food-button-outline:hover {
+  color: white !important;
+}
+
+.food-footer {
+  min-height: 65px;
+  border-top: 1px solid var(--food-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.food-footer > span:first-child {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--food-red);
+  color: white;
+}
+
+.food-footer p,
+.food-footer > span:last-child {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+.food-footer > span:last-child {
+  color: var(--food-muted);
+  text-align: right;
+}
+
+/* REVEAL EFFECTS */
+
+.food-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .75, .25, 1);
+}
+
+.food-reveal.food-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.food-hero.food-reveal {
+  transition-delay: .08s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .food-reveal,
+  .food-button,
+  .food-card,
+  .food-polaroid {
+    transition: none !important;
+  }
+
+  .food-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .food-header,
+  .food-page main,
+  .food-footer {
+    width: min(calc(100% - 38px), 760px);
+  }
+
+  .food-hero {
+    gap: 17px;
+  }
+
+  .food-hero h1 {
+    font-size: clamp(50px, 6.8vw, 72px);
+  }
+
+  .food-sticky {
+    width: 123px;
+    font-size: 19px;
+    padding: 16px 12px;
+  }
+
+  .food-grid {
+    gap: 23px 17px;
+  }
+
+  .food-card {
+    padding-inline: 18px;
+  }
+
+  .food-card h2 {
+    font-size: 27px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 620px) {
+  .food-header,
+  .food-page main,
+  .food-footer {
+    width: calc(100% - 30px);
+  }
+
+  .food-header {
+    min-height: 60px;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+
+  .food-brand {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+    gap: 7px;
+    font-size: 8px;
+    letter-spacing: .1em;
+  }
+
+  .food-brand-icon {
+    width: 23px;
+    height: 23px;
+    font-size: 15px;
+  }
+
+  .food-back {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: -8px;
+    margin-bottom: 9px;
+    font-size: 8px;
+    letter-spacing: .1em;
+  }
+
+  .food-date {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: -8px;
+    margin-bottom: 9px;
+    font-size: 8px;
+  }
+
+  .food-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 30px 3px 40px;
+    gap: 10px;
+  }
+
+  .food-number {
+    width: 39px;
+    height: 39px;
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .food-eyebrow {
+    font-size: 8px;
+  }
+
+  .food-hero h1 {
+    font-size: clamp(47px, 12.2vw, 72px);
+    margin: 13px 0 16px;
+  }
+
+  .food-intro {
+    font-size: 15px;
+    max-width: 340px;
+    margin: 16px 0 19px;
+  }
+
+  .food-button {
+    min-height: 44px;
+    padding-inline: 16px;
+    font-size: 9px;
+  }
+
+  .food-hero-note {
+    position: static;
+    display: inline-block;
+    margin: 16px 0 0 15px;
+    font-size: 22px;
+    vertical-align: middle;
+  }
+
+  .food-hero-art {
+    min-height: 290px;
+    margin-top: 8px;
+  }
+
+  .food-polaroid {
+    width: min(250px, 70%);
+    padding: 12px 12px 16px;
+  }
+
+  .food-pizza-art {
+    min-height: 195px;
+  }
+
+  .food-sticky {
+    width: 120px;
+    top: 23px;
+    right: 0;
+    padding: 15px 11px;
+    font-size: 19px;
+  }
+
+  .food-sticky .pending-mini {
+    font-size: 17px;
+  }
+
+  .food-cherry {
+    top: 0;
+    right: 11%;
+  }
+
+  .food-side-note {
+    right: 0;
+    bottom: 0;
+    font-size: 19px;
+  }
+
+  .food-pizza-doodle {
+    bottom: 30px;
+    right: 18%;
+  }
+
+  .food-journey {
+    padding: 10px 0 45px;
+  }
+
+  .food-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 25px;
+  }
+
+  .food-ribbon {
+    font-size: 20px;
+  }
+
+  .food-section-heading > p {
+    margin-left: 14px;
+    font-size: 20px;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding-inline: 5px;
+  }
+
+  .food-card {
+    min-height: auto;
+    padding: 38px 24px 25px;
+  }
+
+  .food-card h2 {
+    font-size: 32px;
+  }
+
+  .food-card li {
+    font-size: 13px;
+  }
+
+  .food-promise-section {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 25px 4px 65px;
+  }
+
+  .food-receipt {
+    width: min(100%, 350px);
+  }
+
+  .food-promise-copy h2 {
+    font-size: 42px;
+  }
+
+  .food-promise-copy > p:not(.food-promise-line):not(.food-status-message) {
+    font-size: 13px;
+  }
+
+  .food-ending {
+    grid-template-columns: 1fr;
+    padding: 20px 3px 60px;
+    gap: 35px;
+  }
+
+  .food-ending-art {
+    min-height: 280px;
+    padding: 17px;
+  }
+
+  .food-ending-night {
+    min-height: 245px;
+  }
+
+  .food-ending-copy h2 {
+    font-size: 43px;
+  }
+
+  .food-ending-copy > p:not(.food-handwriting) {
+    font-size: 13px;
+  }
+
+  .food-navigation {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 23px 0 30px;
+  }
+
+  .food-navigation > p {
+    order: -1;
+    width: 100%;
+    text-align: center;
+  }
+
+  .food-button-outline,
+  .food-navigation > .food-button:last-child {
+    padding-inline: 10px;
+    gap: 7px;
+    font-size: 8px;
+  }
+
+  .food-footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 16px 0;
+    gap: 9px;
+  }
+
+  .food-footer p {
+    font-size: 8px;
+  }
+
+  .food-footer > span:last-child {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .food-brand {
+    font-size: 7px;
+  }
+
+  .food-hero h1 {
+    font-size: 45px;
+  }
+
+  .food-sticky {
+    width: 105px;
+    right: -3px;
+    font-size: 17px;
+  }
+
+  .food-polaroid {
+    width: 72%;
+  }
+
+  .food-receipt {
+    padding-inline: 18px;
+  }
+
+  .receipt-stamp {
+    width: 93px;
+    right: 8px;
+    font-size: 10px;
+  }
+
+  .food-button-outline,
+  .food-navigation > .food-button:last-child {
+    padding-inline: 8px;
+    font-size: 7px;
+  }
+}
