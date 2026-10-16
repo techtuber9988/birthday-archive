@@ -5,3 +5,5 @@
 > Prototype done on 16th oct
 
 > Fix formatting and layouts
+
+> Task - Lyrics Fixing pending
