@@ -662,3 +662,775 @@ a:focus-visible {
     transition: none;
   }
 }
+/* =========================================
+   HOMEPAGE — ARCHIVE CONTENTS EXPERIENCE
+   The Darshika Archive | Birthday Edition
+========================================= */
+
+/* Small handwritten note under the first button */
+.hero-wait-note {
+  margin: 20px 0 0;
+  font-family: var(--hand);
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--berry);
+}
+
+.hero-wait-note span {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--body);
+  font-size: 10px;
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--red-deep);
+}
+
+/* Shared section width */
+.archive-index,
+.archive-invitation {
+  width: var(--page);
+  max-width: 1120px;
+  margin-inline: auto;
+  position: relative;
+}
+
+/* =========================================
+   ARCHIVE INDEX INTRO
+========================================= */
+
+.archive-index {
+  padding-top: 74px;
+  padding-bottom: 65px;
+  border-top: 1px dashed rgba(123, 38, 56, .3);
+}
+
+.index-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--line);
+}
+
+.index-stamp,
+.index-date {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.index-stamp {
+  padding: 9px 12px;
+  background: var(--yellow);
+  border: 1px solid var(--berry);
+  box-shadow: 3px 3px 0 var(--berry);
+  transform: rotate(-2deg);
+}
+
+.index-date {
+  color: #a86b71;
+  text-align: right;
+}
+
+.index-heading {
+  display: grid;
+  grid-template-columns: 1.1fr .7fr;
+  align-items: end;
+  gap: 55px;
+  margin: 55px 0 45px;
+}
+
+.index-heading .eyebrow {
+  margin-bottom: 17px;
+}
+
+.index-heading h2 {
+  font-size: clamp(48px, 7vw, 82px);
+  line-height: .95;
+}
+
+.index-heading h2 em {
+  font-style: normal;
+}
+
+.index-intro {
+  max-width: 350px;
+  margin: 0 0 7px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.index-intro .hand-note {
+  display: block;
+  margin-top: 12px;
+  color: var(--red);
+  font-size: 24px;
+}
+
+/* =========================================
+   CONTENTS BOARD
+========================================= */
+
+.contents-board {
+  position: relative;
+  padding: 28px;
+  background: var(--paper);
+  border: 2px solid var(--berry);
+  box-shadow: 9px 10px 0 var(--yellow);
+}
+
+.contents-board::before {
+  content: "✳";
+  position: absolute;
+  top: -21px;
+  right: 25px;
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 2px solid var(--berry);
+  border-radius: 50%;
+  background: var(--orange);
+  color: white;
+  font-size: 24px;
+  transform: rotate(12deg);
+}
+
+.contents-board-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 5px 4px 24px;
+  border-bottom: 2px dashed rgba(123, 38, 56, .25);
+}
+
+.board-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--red-deep);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.contents-board-head h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(22px, 4vw, 34px);
+  line-height: 1.05;
+  letter-spacing: -.045em;
+}
+
+.contents-count {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  background: var(--red);
+  color: white;
+  border: 1.5px solid var(--berry);
+  border-radius: 50%;
+  transform: rotate(8deg);
+}
+
+.contents-count strong {
+  font-family: var(--display);
+  font-size: 30px;
+  line-height: 1;
+}
+
+.contents-count span {
+  margin-top: 4px;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+/* Chapter cards grid */
+.contents-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding: 30px 3px;
+}
+
+.contents-card {
+  min-height: 188px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 38px 43px minmax(0, 1fr);
+  align-content: start;
+  align-items: start;
+  gap: 12px;
+  padding: 22px 17px 25px;
+  border: 1.5px solid var(--berry);
+  box-shadow: 4px 5px 0 var(--berry);
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease;
+}
+
+.contents-card:hover {
+  transform: translateY(-5px) rotate(0deg);
+  box-shadow: 7px 9px 0 var(--berry);
+}
+
+.contents-red {
+  background: var(--red);
+  color: white;
+}
+
+.contents-lilac {
+  background: #e6dcff;
+  color: #38284e;
+}
+
+.contents-yellow {
+  background: var(--yellow);
+  color: var(--berry);
+}
+
+.contents-paper {
+  background: #fffaf4;
+  color: var(--berry);
+}
+
+.contents-orange {
+  background: var(--orange);
+  color: #49202b;
+}
+
+.contents-pink {
+  background: #ffdce5;
+  color: #63283b;
+}
+
+.contents-berry {
+  background: var(--berry);
+  color: white;
+}
+
+.contents-number {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  opacity: .8;
+}
+
+.contents-icon {
+  font-size: 29px;
+  line-height: 1;
+  text-align: center;
+}
+
+.contents-info {
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.contents-category {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  line-height: 1.5;
+  opacity: .8;
+}
+
+.contents-info h4 {
+  margin: 0 0 9px;
+  font-family: var(--display);
+  font-size: clamp(19px, 2.3vw, 25px);
+  line-height: 1.03;
+  letter-spacing: -.045em;
+}
+
+.contents-info p {
+  max-width: 260px;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.7;
+  opacity: .92;
+}
+
+.contents-arrow {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  font-size: 18px;
+  opacity: .8;
+}
+
+.contents-doodle {
+  position: absolute;
+  bottom: 9px;
+  right: 14px;
+  font-family: var(--hand);
+  font-size: 17px;
+  font-weight: 700;
+  transform: rotate(-4deg);
+}
+
+.contents-board-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 2px dashed rgba(123, 38, 56, .25);
+  color: #a86b71;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.tilt-left {
+  transform: rotate(-1deg);
+}
+
+.tilt-right {
+  transform: rotate(1deg);
+}
+
+/* Small secret-file note */
+.index-after-note {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: start;
+  gap: 10px;
+  max-width: 640px;
+  margin: 38px auto 0;
+}
+
+.after-note-star {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--red);
+  font-size: 19px;
+}
+
+.index-after-note p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.index-after-note strong {
+  color: var(--red-deep);
+}
+
+.index-after-note .hand-note {
+  grid-column: 2;
+  color: var(--red);
+  font-size: 21px;
+}
+
+/* =========================================
+   FINAL INVITATION
+========================================= */
+
+.archive-invitation {
+  padding-top: 30px;
+  padding-bottom: 75px;
+}
+
+.invitation-paper {
+  max-width: 820px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 58px clamp(25px, 7vw, 75px) 45px;
+  background: var(--yellow);
+  border: 2px solid var(--berry);
+  box-shadow: 10px 11px 0 var(--red);
+}
+
+.invitation-tape {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 95px;
+  height: 24px;
+  background: rgba(255, 255, 255, .6);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.invitation-paper .eyebrow {
+  margin-bottom: 18px;
+}
+
+.invitation-paper h2 {
+  max-width: 650px;
+  font-size: clamp(52px, 8vw, 91px);
+  line-height: .92;
+}
+
+.invitation-paper h2 em {
+  font-style: normal;
+  color: var(--red);
+}
+
+.invitation-copy {
+  max-width: 490px;
+  margin: 25px 0 0;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.invitation-question {
+  margin: 23px 0;
+  font-family: var(--hand);
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 700;
+}
+
+.invitation-btn {
+  margin-top: 2px;
+  max-width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.invitation-signoff {
+  margin: 21px 0 0;
+  font-family: var(--hand);
+  font-size: 23px;
+  color: var(--red-deep);
+  transform: rotate(-2deg);
+}
+
+.invitation-star {
+  position: absolute;
+  z-index: 1;
+  font-size: 40px;
+  color: var(--red);
+}
+
+.invitation-star-one {
+  top: 7px;
+  left: 7%;
+  transform: rotate(-15deg);
+}
+
+.invitation-star-two {
+  right: 7%;
+  bottom: 100px;
+  color: var(--orange);
+  font-size: 53px;
+  transform: rotate(15deg);
+}
+
+.invitation-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  max-width: 820px;
+  margin: 30px auto 0;
+  color: #a86b71;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.home-footer {
+  flex-wrap: wrap;
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 850px) {
+  .index-heading {
+    gap: 30px;
+  }
+
+  .contents-board {
+    padding: 23px;
+  }
+
+  .contents-list {
+    gap: 19px;
+  }
+
+  .contents-card {
+    grid-template-columns: 27px 35px minmax(0, 1fr);
+    gap: 9px;
+    padding: 19px 13px 27px;
+  }
+
+  .contents-icon {
+    font-size: 25px;
+  }
+
+  .contents-info h4 {
+    font-size: 21px;
+  }
+
+  .contents-doodle {
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .hero-wait-note {
+    font-size: 21px;
+    margin-top: 18px;
+  }
+
+  .hero-wait-note span {
+    font-size: 9px;
+  }
+
+  .archive-index {
+    padding-top: 55px;
+    padding-bottom: 48px;
+  }
+
+  .index-topline {
+    align-items: flex-start;
+  }
+
+  .index-stamp {
+    font-size: 8px;
+    padding: 8px;
+  }
+
+  .index-date {
+    max-width: 115px;
+    font-size: 7px;
+    line-height: 1.6;
+  }
+
+  .index-heading {
+    display: block;
+    margin: 39px 0 32px;
+  }
+
+  .index-heading h2 {
+    font-size: clamp(46px, 12vw, 61px);
+  }
+
+  .index-intro {
+    margin-top: 23px;
+    font-size: 13px;
+  }
+
+  .index-intro .hand-note {
+    font-size: 22px;
+  }
+
+  .contents-board {
+    padding: 18px 13px;
+    box-shadow: 6px 7px 0 var(--yellow);
+  }
+
+  .contents-board::before {
+    width: 34px;
+    height: 34px;
+    right: 14px;
+    top: -17px;
+    font-size: 19px;
+  }
+
+  .contents-board-head {
+    padding: 5px 3px 19px;
+    gap: 10px;
+  }
+
+  .board-eyebrow {
+    font-size: 7px;
+    letter-spacing: .1em;
+  }
+
+  .contents-board-head h3 {
+    max-width: 225px;
+    font-size: 22px;
+  }
+
+  .contents-count {
+    width: 58px;
+    height: 58px;
+  }
+
+  .contents-count strong {
+    font-size: 24px;
+  }
+
+  .contents-count span {
+    font-size: 6px;
+  }
+
+  .contents-list {
+    grid-template-columns: 1fr;
+    gap: 19px;
+    padding: 25px 2px;
+  }
+
+  .contents-card {
+    min-height: 155px;
+    grid-template-columns: 27px 38px minmax(0, 1fr);
+    gap: 10px;
+    padding: 19px 15px 28px;
+  }
+
+  .contents-info h4 {
+    max-width: 250px;
+    font-size: 23px;
+  }
+
+  .contents-info p {
+    max-width: 270px;
+    font-size: 11px;
+  }
+
+  .contents-category {
+    font-size: 7px;
+  }
+
+  .contents-icon {
+    font-size: 27px;
+  }
+
+  .contents-doodle {
+    bottom: 7px;
+    right: 12px;
+    font-size: 16px;
+  }
+
+  .contents-board-foot {
+    font-size: 7px;
+    letter-spacing: .06em;
+  }
+
+  .index-after-note {
+    margin-top: 30px;
+    gap: 8px;
+  }
+
+  .index-after-note p {
+    font-size: 11px;
+  }
+
+  .index-after-note .hand-note {
+    font-size: 19px;
+  }
+
+  .archive-invitation {
+    padding-top: 15px;
+    padding-bottom: 55px;
+  }
+
+  .invitation-paper {
+    padding: 52px 21px 32px;
+    box-shadow: 6px 7px 0 var(--red);
+  }
+
+  .invitation-paper .eyebrow {
+    font-size: 8px;
+    max-width: 200px;
+    line-height: 1.6;
+  }
+
+  .invitation-paper h2 {
+    font-size: clamp(49px, 12vw, 65px);
+  }
+
+  .invitation-copy {
+    font-size: 12px;
+    line-height: 1.85;
+    margin-top: 21px;
+  }
+
+  .invitation-question {
+    font-size: 23px;
+    line-height: 1.25;
+  }
+
+  .invitation-btn {
+    width: 100%;
+    padding: 14px 10px;
+    gap: 8px;
+    font-size: 9px;
+    letter-spacing: .04em;
+  }
+
+  .invitation-signoff {
+    font-size: 21px;
+  }
+
+  .invitation-star-one {
+    left: 4%;
+    top: 0;
+    font-size: 29px;
+  }
+
+  .invitation-star-two {
+    right: 3%;
+    bottom: 80px;
+    font-size: 36px;
+  }
+
+  .invitation-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 7px;
+  }
+
+  .home-footer {
+    text-align: center;
+    line-height: 1.8;
+  }
+}
+
+/* Accessibility: avoid hover movement for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .contents-card {
+    transition: none;
+  }
+
+  .contents-card:hover {
+    transform: none;
+  }
+}
+/* Emergency preloader visibility fix */
+.birthday-loader.is-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* PRELOADER STUCK FIX */
+.birthday-loader {
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.birthday-loader.is-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Prevent entry overlay from staying on screen */
+body:not(.is-entering) .page-transition {
+  pointer-events: none;
+}

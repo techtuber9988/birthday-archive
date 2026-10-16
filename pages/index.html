@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="A tiny birthday surprise for Darshika, made with friendship, questionable amounts of affection, and a little bit of bakchodi."
+    content="A tiny birthday surprise for Darshika, made with friendship, questionable amounts of affection, and a little bit of bakloli."
   >
 
   <meta property="og:title" content="Oi, Bhonduu! ♡">
@@ -30,34 +30,39 @@
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body>
-  
-<!-- Birthday intro preloader -->
-<div class="birthday-loader" id="birthday-loader" role="status" aria-label="A birthday surprise for Darshika">
-  <div class="loader-spark spark-one">✳</div>
-  <div class="loader-spark spark-two">✦</div>
-  <div class="loader-spark spark-three">♡</div>
-  <div class="loader-spark spark-four">✧</div>
+<body class="is-entering">
 
-  <div class="loader-content">
-    <span class="loader-eyebrow">A LITTLE SURPRISE FOR</span>
+  <!-- Birthday intro preloader -->
+  <div
+    class="birthday-loader"
+    id="birthday-loader"
+    role="status"
+    aria-label="A birthday surprise for Darshika"
+  >
+    <div class="loader-spark spark-one">✳</div>
+    <div class="loader-spark spark-two">✦</div>
+    <div class="loader-spark spark-three">♡</div>
+    <div class="loader-spark spark-four">✧</div>
 
-    <div class="loader-cake" aria-hidden="true">🎂</div>
+    <div class="loader-content">
+      <span class="loader-eyebrow">A LITTLE SURPRISE FOR</span>
 
-    <h2 class="loader-title">
-      Happy Birthday
-      <span>Darshikaaa!</span>
-    </h2>
+      <div class="loader-cake" aria-hidden="true">🎂</div>
 
-    <p class="loader-note">made with ♡, chaos & a little bakchodi</p>
+      <h2 class="loader-title">
+        Happy Birthday
+        <span>Darshikaaa!</span>
+      </h2>
 
-    <div class="loader-progress" aria-hidden="true">
-      <span></span>
+      <p class="loader-note">made with ♡, chaos & a little bakloli</p>
+
+      <div class="loader-progress" aria-hidden="true">
+        <span></span>
+      </div>
+
+      <span class="loader-bottom">OPENING YOUR LITTLE WORLD ✦</span>
     </div>
-
-    <span class="loader-bottom">OPENING YOUR LITTLE WORLD ✦</span>
   </div>
-</div>
 
   <!-- Paper texture -->
   <div class="paper-grain" aria-hidden="true"></div>
@@ -73,12 +78,10 @@
       <span>THE FRIENDSHIP ARCHIVE</span>
     </a>
 
-    <span class="top-date">
-      13 NOV <span>’26</span>
-    </span>
+    <span class="top-date">13 NOV <span>’26</span></span>
   </header>
 
-    <!-- Birthday marquee strip -->
+  <!-- Birthday marquee -->
   <div class="birthday-marquee" aria-label="Happy birthday to you, Darshika!">
     <div class="marquee-track">
       <div class="marquee-group">
@@ -86,53 +89,46 @@
         <span class="marquee-star">✳</span>
         <span>HAPPY BIRTHDAY DARSHIKAAA</span>
         <span class="marquee-heart">♡</span>
-        <span> BHONDU</span>
+        <span>BHONDU</span>
         <span class="marquee-star">✳</span>
       </div>
 
-      <!-- Duplicate for a seamless infinite loop -->
       <div class="marquee-group" aria-hidden="true">
         <span>HAPPY BIRTHDAY TO YOUUU</span>
         <span class="marquee-star">✳</span>
         <span>HAPPY BIRTHDAY DARSHIKAAA</span>
         <span class="marquee-heart">♡</span>
-        <span> BHONDU</span>
+        <span>BHONDU</span>
         <span class="marquee-star">✳</span>
       </div>
     </div>
   </div>
 
   <main>
+
     <!-- =====================================
-         HOMEPAGE HERO
+         01. BIRTHDAY HERO
     ====================================== -->
     <section class="hero section-wrap" id="home">
 
-      <!-- Decorative stickers -->
       <span class="sticker sticker-sun" aria-hidden="true">
         GOOD<br>VIBES ☀
       </span>
 
-      <span class="sticker sticker-cherry" aria-hidden="true">
-        🍒
-      </span>
+      <span class="sticker sticker-cherry" aria-hidden="true">🍒</span>
 
       <span class="scribble scribble-one" aria-hidden="true">
         made with ♡
       </span>
 
-      <!-- Intro label -->
       <div class="hero-kicker">
         <span class="tiny-star" aria-hidden="true">✦</span>
         A LITTLE SOMETHING FOR YOU
         <span class="tiny-star" aria-hidden="true">✦</span>
       </div>
 
-      <!-- Main birthday greeting -->
       <div class="hero-title-wrap">
-        <span class="hand-note note-left">
-          oi, madam!
-        </span>
+        <span class="hand-note note-left">oi, madam!</span>
 
         <h1>
           Oye,
@@ -142,13 +138,12 @@
         <span class="burst" aria-hidden="true">✳</span>
       </div>
 
-      <!-- Main scrapbook card -->
       <div class="hero-card">
         <span class="tape tape-left" aria-hidden="true"></span>
         <span class="tape tape-right" aria-hidden="true"></span>
 
         <p class="hero-subtitle">
-          Your favourite  ullu<br>
+          Your favourite ullu<br>
           made you something.
         </p>
 
@@ -163,50 +158,307 @@
           Don't get emotional. Abhi toh shuru kiya hai.
         </p>
 
-        <!-- Opens the separate archive page -->
+        <!-- This button takes her to the contents first -->
         <a
           class="primary-btn"
-          href="archive.html"
-          id="open-archive"
-          aria-label="Open your friendship archive"
+          href="#archive-index"
+          id="explore-contents"
+          aria-label="Scroll down to preview the friendship archive contents"
         >
-          CHAL, KHOL KE DEKH
-          <span aria-hidden="true">↗</span>
+          PEHLE CONTENTS DEKH
+          <span aria-hidden="true">↓</span>
         </a>
+
+        <p class="hero-wait-note">
+          Arrey, abhi ruk na! 😭
+          <span>Pehle dekh toh sahi website mein kya-kya hai.</span>
+        </p>
       </div>
 
-      <!-- Footer notes inside hero -->
       <div class="hero-footer">
         <span class="hand-note">
           made with questionable amounts of affection
         </span>
 
-        <span class="footer-doodles" aria-hidden="true">
-          🍕 ✦ 🍒
-        </span>
+        <span class="footer-doodles" aria-hidden="true">🍕 ✦ 🍒</span>
       </div>
 
       <span class="vertical-note" aria-hidden="true">
         A VERY UNOFFICIAL DOCUMENT
       </span>
-
     </section>
+
+
+    <!-- =====================================
+         02. ARCHIVE CONTENTS / TABLE OF CONTENTS
+    ====================================== -->
+    <section class="archive-index section-wrap" id="archive-index">
+
+      <!-- Section heading -->
+      <div class="index-topline">
+        <span class="index-stamp">THE OFFICIAL-ISH GUIDE</span>
+        <span class="index-date">EST. OUR FRIENDSHIP ♡</span>
+      </div>
+
+      <div class="index-heading">
+        <div>
+          <p class="eyebrow">BEFORE YOU ENTER...</p>
+
+          <h2>
+            Arrey ruk.<br>
+            <em>Contents dekh le.</em>
+          </h2>
+        </div>
+
+        <p class="index-intro">
+          Seven little chapters. Too many memories.
+          One very questionable friendship.
+          <span class="hand-note">Sounds about right, no? ♡</span>
+        </p>
+      </div>
+
+      <!-- Scrapbook contents board -->
+      <div class="contents-board">
+
+        <div class="contents-board-head">
+          <div>
+            <span class="board-eyebrow">FILE NO. 13-11-26</span>
+            <h3>THE FRIENDSHIP ARCHIVE</h3>
+          </div>
+
+          <div class="contents-count">
+            <strong>07</strong>
+            <span>CHAPTERS</span>
+          </div>
+        </div>
+
+        <div class="contents-list">
+
+          <!-- 01: bakloli -->
+          <article class="contents-card contents-red tilt-left">
+            <div class="contents-number">01</div>
+
+            <div class="contents-icon" aria-hidden="true">🍒</div>
+
+            <div class="contents-info">
+              <span class="contents-category">THE CHAOS DEPARTMENT</span>
+              <h4>The bakloli Era</h4>
+              <p>
+                Threats, nonsense, ragebait and absolutely
+                zero peace of mind.
+              </p>
+            </div>
+
+            <span class="contents-arrow" aria-hidden="true">✳</span>
+
+            <span class="contents-doodle">certified pagal</span>
+          </article>
+
+          <!-- 02: Deep talks -->
+          <article class="contents-card contents-lilac tilt-right">
+            <div class="contents-number">02</div>
+
+            <div class="contents-icon" aria-hidden="true">☾</div>
+
+            <div class="contents-info">
+              <span class="contents-category">THE AFTER-HOURS FILE</span>
+              <h4>The Deep Talks</h4>
+              <p>
+                Late-night updates, overthinking, big dreams
+                and life being life.
+              </p>
+            </div>
+
+            <span class="contents-arrow" aria-hidden="true">✦</span>
+
+            <span class="contents-doodle">same sky ♡</span>
+          </article>
+
+          <!-- 03: Food -->
+          <article class="contents-card contents-yellow tilt-right">
+            <div class="contents-number">03</div>
+
+            <div class="contents-icon" aria-hidden="true">🍕</div>
+
+            <div class="contents-info">
+              <span class="contents-category">VERY SERIOUS BUSINESS</span>
+              <h4>The Food Department™</h4>
+              <p>
+                Tuck-shop treats, homemade food and that
+                legendary pending pizza.
+              </p>
+            </div>
+
+            <span class="contents-arrow" aria-hidden="true">↗</span>
+
+            <span class="contents-doodle">feed the bestie</span>
+          </article>
+
+          <!-- 04: Academics -->
+          <article class="contents-card contents-paper tilt-left">
+            <div class="contents-number">04</div>
+
+            <div class="contents-icon" aria-hidden="true">✎</div>
+
+            <div class="contents-info">
+              <span class="contents-category">SEMESTER SURVIVAL UNIT</span>
+              <h4>Academic Support™</h4>
+              <p>
+                Assignments, study help and surviving college
+                one deadline at a time.
+              </p>
+            </div>
+
+            <span class="contents-arrow" aria-hidden="true">★</span>
+
+            <span class="contents-doodle">academic crimes</span>
+          </article>
+
+          <!-- 05: Letter -->
+          <article class="contents-card contents-orange tilt-right">
+            <div class="contents-number">05</div>
+
+            <div class="contents-icon" aria-hidden="true">💌</div>
+
+            <div class="contents-info">
+              <span class="contents-category">SENTIMENTAL ALERT</span>
+              <h4>A Letter For You</h4>
+              <p>
+                The things that are easier to write down
+                than say out loud.
+              </p>
+            </div>
+
+            <span class="contents-arrow" aria-hidden="true">♡</span>
+
+            <span class="contents-doodle">no crying pls</span>
+          </article>
+
+          <!-- 06: Little things -->
+          <article class="contents-card contents-pink tilt-left">
+            <div class="contents-number">06</div>
+
+            <div class="contents-icon" aria-hidden="true">♫</div>
+
+            <div class="contents-info">
+              <span class="contents-category">THE TINY DETAILS</span>
+              <h4>The Little Things</h4>
+              <p>
+                Little moments, random details and the stuff
+                that makes this friendship ours.
+              </p>
+            </div>
+
+            <span class="contents-arrow" aria-hidden="true">✧</span>
+
+            <span class="contents-doodle">remember this?</span>
+          </article>
+
+          <!-- 07: Friendship agreement -->
+          <article class="contents-card contents-berry tilt-right">
+            <div class="contents-number">07</div>
+
+            <div class="contents-icon" aria-hidden="true">📜</div>
+
+            <div class="contents-info">
+              <span class="contents-category">LEGALLY QUESTIONABLE</span>
+              <h4>The Friendship Agreement™</h4>
+              <p>
+                Official clauses, food laws, bestie duties
+                and terms you never agreed to.
+              </p>
+            </div>
+
+            <span class="contents-arrow" aria-hidden="true">§</span>
+
+            <span class="contents-doodle">sign here, madam</span>
+          </article>
+
+        </div>
+
+        <div class="contents-board-foot">
+          <span>7 CHAPTERS. 1 BHONDU.</span>
+          <span>HANDLE WITH CARE-ish ♡</span>
+        </div>
+      </div>
+
+      <!-- Tiny note below the contents -->
+      <div class="index-after-note">
+        <span class="after-note-star" aria-hidden="true">✳</span>
+
+        <p>
+          Aur haan, bakloli wale section mein ek
+          <strong>secret file</strong> bhi hai.
+          Khud explore karna. Main sab nahi bataunga. 😌
+        </p>
+
+        <span class="hand-note">little surprises are part of the deal</span>
+      </div>
+    </section>
+
+
+    <!-- =====================================
+         03. FINAL CALL TO ACTION
+    ====================================== -->
+    <section class="archive-invitation section-wrap" id="open-invitation">
+
+      <span class="invitation-star invitation-star-one" aria-hidden="true">✳</span>
+      <span class="invitation-star invitation-star-two" aria-hidden="true">♡</span>
+
+      <div class="invitation-paper">
+        <span class="invitation-tape" aria-hidden="true"></span>
+
+        <p class="eyebrow">CONTENTS CHECKED? ✔</p>
+
+        <h2>
+          Achha, ab<br>
+          <em>andar bhi aa ja.</em>
+        </h2>
+
+        <p class="invitation-copy">
+          bakloli bhi hai. Deep talks bhi.
+          Food ka pending hisaab bhi.
+          Academic survival bhi, kuch unsaid baatein bhi...
+          aur ek contract bhi. 😭
+        </p>
+
+        <p class="invitation-question">
+          Toh madam, ready ho apna archive kholne ke liye?
+        </p>
+
+        <!-- This is now the real archive-opening button -->
+        <a
+          class="primary-btn invitation-btn"
+          href="archive.html"
+          id="open-archive"
+          aria-label="Open the full friendship archive"
+        >
+          CHAL, AB ACTUAL ARCHIVE KHOL
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <p class="invitation-signoff">
+          I warned you. Don't get emotional. ♡
+        </p>
+      </div>
+
+      <div class="invitation-bottom">
+        <span>MADE FOR DARSHIKAAA</span>
+        <span>WITH LOVE, LAUGHTER & bakloli ✳</span>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Minimal footer -->
-  <footer class="footer">
-   
-    <span>HAPPY  BIRTHDAY  TO   YOUUU  DARSHIIIKAAAA</span>
-   
+  <!-- Footer -->
+  <footer class="footer home-footer">
+    <span>HAPPY BIRTHDAY TO YOUUU DARSHIIIKAAAA ♡</span>
+    <span>THE FRIENDSHIP ARCHIVE · 13 NOV ’26</span>
   </footer>
 
   <!-- Page transition overlay -->
-  <div
-    class="page-transition"
-    aria-hidden="true"
-  ></div>
+  <div class="page-transition" aria-hidden="true"></div>
 
-  <!-- Interactions -->
   <script src="../js/script.js"></script>
 </body>
 </html>

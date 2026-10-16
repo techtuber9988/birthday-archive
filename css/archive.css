@@ -405,6 +405,21 @@
   color: white;
 }
 
+.memory-lilac {
+  background: #e6dcff;
+  color: #38284e;
+}
+
+.memory-pink {
+  background: #ffdce5;
+  color: #63283b;
+}
+
+.memory-berry {
+  background: var(--berry);
+  color: white;
+}
+
 .memory-card-copy {
   display: flex;
   align-items: flex-start;
@@ -427,7 +442,9 @@
 }
 
 .memory-yellow .memory-number,
-.memory-cream .memory-number {
+.memory-cream .memory-number,
+.memory-lilac .memory-number,
+.memory-pink .memory-number {
   background: var(--berry);
   color: white;
 }
@@ -441,7 +458,9 @@
 }
 
 .memory-yellow .memory-mini-doodle,
-.memory-cream .memory-mini-doodle {
+.memory-cream .memory-mini-doodle,
+.memory-lilac .memory-mini-doodle,
+.memory-pink .memory-mini-doodle {
   color: var(--red);
 }
 
@@ -477,7 +496,9 @@
 }
 
 .memory-yellow .memory-open,
-.memory-cream .memory-open {
+.memory-cream .memory-open,
+.memory-lilac .memory-open,
+.memory-pink .memory-open {
   background: var(--berry);
   color: white;
 }
@@ -554,6 +575,35 @@
   );
   font-size: 39px;
   color: var(--red);
+}
+
+.photo-letter {
+  background: linear-gradient(145deg, #e6dcff, #c9b8f5);
+  color: #38284e;
+  font-size: 36px;
+  display: flex;
+  gap: 6px;
+}
+
+.photo-little {
+  background: linear-gradient(145deg, #ffdce5, #f9b8c9);
+  color: var(--red);
+  font-size: 36px;
+  display: flex;
+  gap: 6px;
+}
+
+.photo-contract {
+  background: repeating-linear-gradient(
+    0deg,
+    #fff8f0 0,
+    #fff8f0 18px,
+    #e8cec5 19px
+  );
+  font-size: 34px;
+  color: var(--red);
+  display: flex;
+  gap: 6px;
 }
 
 .photo-caption {
