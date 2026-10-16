@@ -3,3 +3,5 @@
 > Work start on 13 oct
 
 > Prototype done on 16th oct
+
+> Fix formatting and layouts
